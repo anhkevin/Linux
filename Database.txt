@@ -1,2 +1,21 @@
+--- Connect to MySQL ---
+mysql -uroot
+
+--- Set a new MySQL root password ---
+use mysql;
+update user set password=PASSWORD("mynewpassword") where User='root';
+flush privileges;
+quit
+
+--- Stop and start the MySQL ---
++ (Ubuntu and Debian)
+sudo /etc/init.d/mysql stop
+sudo /etc/init.d/mysql start
+
++ (CentOS, Fedora, and Red Hat Enterprise Linux)
+sudo /etc/init.d/mysqld stop
+sudo /etc/init.d/mysqld start
+
 --- Log in to the database ---
 mysql -u root -p
+
